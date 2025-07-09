@@ -1,32 +1,35 @@
 pipeline {
-
     agent any
 
     stages {
-        stage('Checkout'){
+        stage('Checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/vprichkapova/Student-Registry-App.git'
-}
-}
-        stage ('Install Dependencies'){
+            }
+        }
+
+        stage('Install Dependencies') {
             steps {
                 script {
                     bat 'npm install'
                 }
             }
-        stage ("Start Application and run tests") {
+        }
+
+        stage('Start Application and run tests') {
             steps {
                 script {
                     bat "npm start &"
                     bat "wait-on http://localhost:8080"
                     bat "npm test"
+                }
+            }
+        }
     }
-}
-}
+
     post {
         always {
-             echo "CI pipeline completed"
+            echo "CI pipeline completed"
         }
     }
 }
-    }
