@@ -16,18 +16,26 @@ pipeline {
             }
         }
 
-        stage('Start Application and run tests') {
+        stage('Start Application') {
             steps {
                 script {
                     bat 'start /b npm start'
                 }
             }
         }
-    }
-        stage('Run tests') {
+
+        stage('Wait for App to Start') {
             steps {
                 script {
-                    bat 'start npm test'
+                    bat 'npx wait-on http://localhost:8080'
+                }
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                script {
+                    bat 'npm test'
                 }
             }
         }
@@ -38,4 +46,4 @@ pipeline {
             echo "CI pipeline completed"
         }
     }
-
+}
