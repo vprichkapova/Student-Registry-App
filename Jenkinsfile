@@ -38,4 +38,4 @@ pipeline {
             echo "CI pipeline completed"
         }
     }
-}
+
