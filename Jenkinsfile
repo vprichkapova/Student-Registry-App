@@ -2,15 +2,6 @@ pipeline {
 
 agent any
 
-environment  {
-
-    NODE_VERSIONS = '22.x'
-}
-
-tools {
-
-    nodejs "${NODE_VERSIONS}"
-}
 stages {
 
 stage('Checkout'){
