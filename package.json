@@ -1,6 +1,26 @@
 {
-  "name": "MVC-app-integration-tests-example",
+  "name": "mvc-app-integration-tests-example",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/vprichkapova/Student-Registry-App#readme",
+  "bugs": {
+    "url": "https://github.com/vprichkapova/Student-Registry-App/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vprichkapova/Student-Registry-App.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
   "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "mocha tests/*.js",
+    "start": "node index.js"
+  },
   "dependencies": {
     "body-parser": "^1.20.3",
     "express": "^4.21.1",
@@ -8,8 +28,5 @@
     "node-fetch": "^2.7.0",
     "pug": "^3.0.3"
   },
-  "scripts": {
-    "test": "mocha tests/*.js",
-    "start": "node index.js"
-  }
+  "devDependencies": {}
 }
